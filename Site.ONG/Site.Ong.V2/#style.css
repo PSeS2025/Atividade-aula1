@@ -1,0 +1,162 @@
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --cor-terciaria: #f59e0b;
+  --accent-color: #f87171;
+  --bg-color: #f9fafb;
+  --text-color: #333;
+  --border-color: #e5e7eb;
+  --cor-preta: #000000;
+  --cor-branca: #ffffff;
+  --Amarelo-Mostarda: #FFDB58;
+  --radius: 12px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
+    url('https://cdn.pixabay.com/photo/2016/03/31/19/55/children-1294369_1280.png');
+  background-size: cover;
+  background-position: center;
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin: 1rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-family: "Chewy", cursive;
+  color: var(--cor-preta);
+}
+
+/* Menu */
+nav {
+  background-color: #333;
+}
+
+nav button {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 1rem;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  list-style: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  display: block;
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+  border-radius: var(--radius);
+}
+
+/* Conteúdo */
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+article {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+aside {
+  background: var(--Amarelo-Mostarda);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+}
+
+/* Botão topo */
+#btn-topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    transition: max-height 0.4s ease-out;
+    overflow: hidden;
+  }
+
+  nav button {
+    display: block;
+  }
+
+  nav ul.show {
+    display: flex;
+    max-height: 500px;
+  }
+}

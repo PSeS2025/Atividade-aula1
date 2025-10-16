@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma para ONGs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@400;600&family=Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    :root {
+         --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --cor-terciaria: #f59e0b;
+  --accent-color: #f87171;
+  --bg-color: #f9fafb;
+  --text-color: #333;
+  --border-color: #e5e7eb;
+  --cor-preta: #000000;
+  --cor-branca: #ffffff;
+  --Amarelo-Mostarda: #FFDB58;
+  --radius: 12px;
+    }
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+  background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
+    url('https://cdn.pixabay.com/photo/2016/03/31/19/55/children-1294369_1280.png');
+  background-size: cover;
+  background-position: center;
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--primary-color);
+  background-image: url('Color1.jpg');
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin: 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--cor-preta);
+}
+
+/* Menu */
+nav {
+  background-color: #333;
+}
+
+nav button {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 1rem;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  list-style: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  display: block;
+  transition: background 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+  border-radius: var(--radius);
+}
+
+/* Conteúdo */
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+article {
+  background: white;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h3 {
+  margin-bottom: 1rem; /* espaço abaixo do h3 */  
+}
+
+
+aside {
+  background: var(--Amarelo-Mostarda);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  height: fit-content;
+}
+
+/* Botão topo */
+#btn-topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    transition: max-height 0.4s ease-out;
+    overflow: hidden;
+  }
+
+  nav button {
+    display: block;
+  }
+
+  nav ul.show {
+    display: flex;
+    max-height: 500px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <h1>Construindo um Futuro Melhor</h1>
+    <h2>Espaço de Proteção às Crianças</h2>
+    <p>Denuncie qualquer tipo de abuso infantil <strong>0800 000 0000</strong></p> 
+  </header>
+
+  <nav aria-label="Menu principal">
+    <button id="menu-toggle" aria-expanded="false" aria-controls="menu-list">☰ Menu</button>
+    <ul id="menu-list" class="menu">
+      <li><a href="#home">Home</a>
+        <ul>
+          <li><a href="#">ONG</a></li>
+          <li><a href="#">Acesso à Informação</a></li>
+          <li><a href="#">Canais de Informações</a></li>
+          <li><a href="#">Eventos</a></li>
+        </ul>
+      </li>
+      <li><a href="#quemsomos">Quem Somos</a>
+        <ul>
+          <li><a href="#">Institucional</a></li>
+          <li><a href="#">Administradores</a></li>
+          <li><a href="#">Voluntários</a></li>
+        </ul>
+      </li>
+      <li><a href="#programas">Programas e Projetos</a>
+        <ul>
+          <li><a href="#">Enfrentamento à Exploração</a></li>
+          <li><a href="#">Recuperação das vítimas</a></li>
+        </ul>
+      </li>
+      <li><a href="#parceiros">Parceiros</a>
+        <ul>
+          <li><a href="#">Casa de Acolhimento às Vítimas</a></li>
+          <li><a href="#">Acompanhamento Teológico e Psicológico</a></li>
+          <li><a href="#">Parceiros Financeiros</a></li>
+        </ul>      
+      </li>
+      <li><a href="#contato">Fale Conosco</a>
+        <ul>
+          <li><a href="#">0800 000 0000</a></li>
+          <li><a href="#">email: ong@ong.ong.br</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="programas">
+      <h1>PROGRAMAS</h1>
+      <h2>Programa de Enfrentamento à Exploração e Abuso Infantil</h2>
+
+      <article>
+        <h3>Abuso e Exploração Sexual</h3>
+        <p>Combater o abuso e a exploração sexual infantil é dever de todos. Denuncie e apoie nossas ações.</p>
+      </article>
+
+      <article>
+        <h3>Você Sabia?</h3>
+        <p>É crime fotografar, filmar, baixar, armazenar ou compartilhar material com crianças e adolescentes nus ou em poses eróticas.</p>
+      </article>
+
+      <article>
+        <h3>Diferença entre Abuso Sexual e Exploração Sexual</h3>
+        <p><strong>Abuso Sexual:</strong> Prática sexual contra crianças e adolescentes, geralmente cometida por pessoas próximas à vítima.</p>
+        <p><strong>Exploração Sexual:</strong> Envolve lucro, intermediação e produção de material pornográfico infantil.</p>
+      </article>
+
+      <article>
+        <h3>Quem são os abusadores?</h3>
+        <p>A maioria são homens, geralmente parentes das vítimas, com histórico de violência, drogas ou negligência.</p>
+      </article>
+    </section>
+
+    <aside aria-label="Materiais de apoio">
+      <h2>Para saber mais:</h2>
+      <p>Acesse a <a href="https://www.policiacivil.sp.gov.br/portal/imagens/Cartilha%20Violencia%20Sexual.pdf" target="_blank" rel="noopener noreferrer">cartilha sobre violência sexual</a> no site da Polícia Civil.</p>
+    </aside>
+  </main>
+
+  <button id="btn-topo" aria-label="Voltar ao topo">↑</button>
+
+  <footer>
+    <p>&copy; 2025 Plataforma para ONGs — Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
